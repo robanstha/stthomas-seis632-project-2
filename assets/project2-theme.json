@@ -1,0 +1,35 @@
+{
+  "name": "UST Minnesota Brand Theme",
+  "dataColors": [
+    "#510C76",
+    "#98999B",
+    "#7E52A0",
+    "#C8C8C8",
+    "#6A2577",
+    "#4B4B4B",
+    "#DADADA",
+    "#FFFFFF"
+  ],
+  "foreground": "#510C76",
+  "tableAccent": "#510C76",
+  "good": "#10B981",
+  "neutral": "#98999B",
+  "bad": "#EF4444",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI",
+      "fontSize": 24,
+      "color": "#510C76"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 16,
+      "color": "#4B4B4B"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 12,
+      "color": "#98999B"
+    }
+  }
+}

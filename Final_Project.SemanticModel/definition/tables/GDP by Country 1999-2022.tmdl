@@ -1,0 +1,51 @@
+table 'GDP by Country 1999-2022'
+	lineageTag: 6bcac93b-49f7-4808-85e1-aa33f0539acf
+
+	column Country
+		dataType: string
+		lineageTag: 77a58936-f53b-457f-a888-745ff97965dd
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 040d08e4-603b-4b16-b5e1-5f3caed3758b
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column GDP
+		dataType: double
+		lineageTag: fe9589d2-c0ff-4e64-9c6b-3bbae21c57d1
+		summarizeBy: sum
+		sourceColumn: GDP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'GDP by Country 1999-2022' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\roban\projects\SEIS632\Project 2\datasets\GDP by Country 1999-2022.csv"),[Delimiter=",", Columns=24, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"1999", type number}, {"2000", type number}, {"2001", type number}, {"2002", type number}, {"2003", type number}, {"2004", type number}, {"2005", type number}, {"2006", type number}, {"2007", type number}, {"2008", type number}, {"2009", type number}, {"2010", type number}, {"2012", type number}, {"2013", type number}, {"2014", type number}, {"2015", type number}, {"2016", type number}, {"2017", type number}, {"2018", type number}, {"2019", type number}, {"2020", type number}, {"2021", type number}, {"2022", type number}}),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Changed Type", {"Country"}, "Attribute", "Value"),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Unpivoted Other Columns",{{"Attribute", type date}}),
+				    #"Extracted Year" = Table.TransformColumns(#"Changed Type1",{{"Attribute", Date.Year, Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Extracted Year",{{"Attribute", "Year"}, {"Value", "GDP"}}),
+				    #"Removed Blank Rows" = Table.SelectRows(#"Renamed Columns", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Blank Rows","Afghanistan, Rep. of.","Afghanistan",Replacer.ReplaceText,{"Country"})
+				in
+				    #"Replaced Value"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

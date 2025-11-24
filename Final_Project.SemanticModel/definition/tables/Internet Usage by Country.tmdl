@@ -1,0 +1,86 @@
+table 'Internet Usage by Country'
+	lineageTag: 2403c7ce-37d4-42af-8ddf-bbe9d96160f5
+
+	column Country
+		dataType: string
+		lineageTag: 8b9c4cfa-8d1d-4124-a74f-86387f853b9a
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code
+		dataType: string
+		lineageTag: 24056302-4f97-452c-83cd-8768df8b1080
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 7284b93f-ce91-454f-a405-09c7da15f957
+		summarizeBy: sum
+		sourceColumn: Year
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cellular Subscription'
+		dataType: double
+		lineageTag: e352172a-1603-40d5-8501-db79dacbb24f
+		summarizeBy: sum
+		sourceColumn: Cellular Subscription
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Internet Users(%)'
+		dataType: double
+		lineageTag: 7a1e31a1-c309-4653-9a38-8ee33d2484e5
+		summarizeBy: sum
+		sourceColumn: Internet Users(%)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'No. of Internet Users'
+		dataType: int64
+		formatString: 0
+		lineageTag: 55e79b3b-cf93-4c27-8da5-602ca9c70cb0
+		summarizeBy: sum
+		sourceColumn: No. of Internet Users
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Broadband Subscription'
+		dataType: double
+		lineageTag: 4aa409b5-63d3-4f5e-ad3f-a2e1f59797c6
+		summarizeBy: sum
+		sourceColumn: Broadband Subscription
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Internet Usage by Country' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\roban\projects\SEIS632\Project 2\datasets\Final.csv"),[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"", Int64.Type}, {"Entity", type text}, {"Code", type text}, {"Year", Int64.Type}, {"Cellular Subscription", type number}, {"Internet Users(%)", type number}, {"No. of Internet Users", Int64.Type}, {"Broadband Subscription", type number}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{Table.ColumnNames(#"Changed Type"){0}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Entity", "Country"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

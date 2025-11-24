@@ -1,0 +1,13 @@
+relationship 80e2297e-1756-ab0f-04ea-e7bc6eb14161
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'GDP by Country 1999-2022'.Country
+	toColumn: 'Internet Usage by Country'.Country
+
+relationship 44c48095-6644-ed36-1065-b4d3946d60bf
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'GDP by Country 1999-2022'.Year
+	toColumn: 'Internet Usage by Country'.Year
+

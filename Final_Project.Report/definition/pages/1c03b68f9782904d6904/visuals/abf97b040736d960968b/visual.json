@@ -1,0 +1,112 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "abf97b040736d960968b",
+  "position": {
+    "x": 155,
+    "y": 178.75,
+    "z": 4000,
+    "height": 362.5,
+    "width": 426.25,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Internet Usage by Country"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "Internet Usage by Country.Year.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "Year Year",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Internet Usage by Country"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "Internet Usage by Country.Country",
+              "nativeQueryRef": "Country"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Internet Usage by Country"
+                        }
+                      },
+                      "Property": "No. of Internet Users"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Internet Usage by Country.No. of Internet Users)",
+              "nativeQueryRef": "Sum of No. of Internet Users"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "heading": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Heading2'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

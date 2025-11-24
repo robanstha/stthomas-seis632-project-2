@@ -1,0 +1,28 @@
+1. Imported data
+2. Promoted first row for both tables as headers.
+2. Renamed Final table to Internet Usage by Country.
+3. Deleted index column from Final.csv in Power Bi.
+   Used DAX query to remove the columns rather than the column name.
+   Table.RemoveColumns(#"Changed Type",{Table.ColumnNames(#"Changed Type"){0}})
+4. Updated datatypes for each column:
+   Internet Usage table:
+     Entity -> Type text -> Category: Country/Region
+     Year   -> Type Date/Time -> Format: YYYY
+   GDP table:
+     Country -> Type: Text -> Data Category: Country/Region
+     All other columns -> Type: decimal
+5. Unpivot GDP table to put the year in the column.
+   Select Country column, right click and click "Unpivot other columns"
+   Renamed columns to Year and GDP respectively and changed the data types.
+6. Cleaned data:
+   - Removed empty rows if available
+   - Replaces values:
+	Afghaninstan, Rep. of. -> Afghaninstan
+   - Filtered 1999-2020 Data in Internet Usage table to match with GDP table
+7. Created Relationship between two tables by joining them with Many-To-Many by Year and Country.
+  
+Creating dashboard
+
+1. Created background and boilerplate using rectangle shapes from Power BI.
+2. Generated logo for team using Generative AI Gemini's Fast LLM Model: https://gemini.google.com/share/bba54de69453
+3. Created bookmarks to create tabs in the dashboard.
