@@ -19,7 +19,31 @@
    - Replaces values:
 	Afghaninstan, Rep. of. -> Afghaninstan
    - Filtered 1999-2020 Data in Internet Usage table to match with GDP table
-7. Created Relationship between two tables by joining them with Many-To-Many by Year and Country.
+
+Create Many-To-Many Relationship with Year and Country
+1. Created new table called Year table from GDP table.
+2. Created Run Python script in the PowerBI to run following python code:
+import pandas as pd
+import numpy as np
+
+# 'dataset' is the current table in Power Query
+# Get unique years from current table
+year_table = pd.DataFrame({
+    'Year': sorted(dataset['Year'].unique())
+})
+
+# Set data type to Int64 (ensures Power BI recognizes it as Whole Number)
+year_table['Year'] = year_table['Year'].astype('int64')
+
+# Return the new dataframe
+year_table
+
+3. Selected Year table and removed extra columns.
+4. Appended Query from Internet Usage table and removed columns again.
+5. Finally, removed duplicate rows from year column to extract all Years from both tables.
+6. Looking at the model view, the relationship has already been created.
+7. Repeated same steps for Country column for both table.
+
   
 Creating dashboard
 

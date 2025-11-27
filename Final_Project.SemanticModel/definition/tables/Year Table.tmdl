@@ -1,35 +1,16 @@
-table 'GDP by Country 1999-2022'
-	lineageTag: 6bcac93b-49f7-4808-85e1-aa33f0539acf
-
-	column Country
-		dataType: string
-		lineageTag: 77a58936-f53b-457f-a888-745ff97965dd
-		dataCategory: Country
-		summarizeBy: none
-		sourceColumn: Country
-
-		annotation SummarizationSetBy = Automatic
+table 'Year Table'
+	lineageTag: e2497f52-966d-472f-bd72-80cf3576207e
 
 	column Year
 		dataType: int64
 		formatString: 0
-		lineageTag: 040d08e4-603b-4b16-b5e1-5f3caed3758b
+		lineageTag: bfdbceda-9526-499d-812e-418d1f75b4b5
 		summarizeBy: none
 		sourceColumn: Year
 
 		annotation SummarizationSetBy = Automatic
 
-	column GDP
-		dataType: double
-		lineageTag: fe9589d2-c0ff-4e64-9c6b-3bbae21c57d1
-		summarizeBy: sum
-		sourceColumn: GDP
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	partition 'GDP by Country 1999-2022' = m
+	partition 'Year Table' = m
 		mode: import
 		source =
 				let
@@ -41,11 +22,17 @@ table 'GDP by Country 1999-2022'
 				    #"Extracted Year" = Table.TransformColumns(#"Changed Type1",{{"Attribute", Date.Year, Int64.Type}}),
 				    #"Renamed Columns" = Table.RenameColumns(#"Extracted Year",{{"Attribute", "Year"}, {"Value", "GDP"}}),
 				    #"Removed Blank Rows" = Table.SelectRows(#"Renamed Columns", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
-				    #"Replaced Value" = Table.ReplaceValue(#"Removed Blank Rows","Afghanistan, Rep. of.","Afghanistan",Replacer.ReplaceText,{"Country"})
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Blank Rows","Afghanistan, Rep. of.","Afghanistan",Replacer.ReplaceText,{"Country"}),
+				    #"Run Python script" = Python.Execute("import pandas as pd#(lf)import numpy as np#(lf)#(lf)# 'dataset' is the current table in Power Query#(lf)# Get unique years from current table#(lf)year_table = pd.DataFrame({#(lf)    'Year': sorted(dataset['Year'].unique())#(lf)})#(lf)#(lf)# Set data type to Int64 (ensures Power BI recognizes it as Whole Number)#(lf)year_table['Year'] = year_table['Year'].astype('int64')#(lf)#(lf)# Return the new dataframe#(lf)year_table",[dataset=#"Replaced Value"]),
+				    year_table = #"Run Python script"{[Name="year_table"]}[Value],
+				    #"Changed Type2" = Table.TransformColumnTypes(year_table,{{"Year", Int64.Type}}),
+				    #"Appended Query" = Table.Combine({#"Changed Type2", #"Internet Usage by Country"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Appended Query",{"Country", "Code", "Cellular Subscription", "Internet Users(%)", "No. of Internet Users", "Broadband Subscription"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns")
 				in
-				    #"Replaced Value"
-
-	annotation PBI_ResultType = Table
+				    #"Removed Duplicates"
 
 	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

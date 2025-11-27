@@ -1,35 +1,15 @@
-table 'GDP by Country 1999-2022'
-	lineageTag: 6bcac93b-49f7-4808-85e1-aa33f0539acf
+table 'Country Table'
+	lineageTag: cee5927e-a411-4d7e-8bd5-7dc65219ee27
 
 	column Country
 		dataType: string
-		lineageTag: 77a58936-f53b-457f-a888-745ff97965dd
-		dataCategory: Country
+		lineageTag: 7811ca28-f427-4a51-8ce9-d6e0d2bc39f0
 		summarizeBy: none
 		sourceColumn: Country
 
 		annotation SummarizationSetBy = Automatic
 
-	column Year
-		dataType: int64
-		formatString: 0
-		lineageTag: 040d08e4-603b-4b16-b5e1-5f3caed3758b
-		summarizeBy: none
-		sourceColumn: Year
-
-		annotation SummarizationSetBy = Automatic
-
-	column GDP
-		dataType: double
-		lineageTag: fe9589d2-c0ff-4e64-9c6b-3bbae21c57d1
-		summarizeBy: sum
-		sourceColumn: GDP
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	partition 'GDP by Country 1999-2022' = m
+	partition 'Country Table' = m
 		mode: import
 		source =
 				let
@@ -41,11 +21,16 @@ table 'GDP by Country 1999-2022'
 				    #"Extracted Year" = Table.TransformColumns(#"Changed Type1",{{"Attribute", Date.Year, Int64.Type}}),
 				    #"Renamed Columns" = Table.RenameColumns(#"Extracted Year",{{"Attribute", "Year"}, {"Value", "GDP"}}),
 				    #"Removed Blank Rows" = Table.SelectRows(#"Renamed Columns", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
-				    #"Replaced Value" = Table.ReplaceValue(#"Removed Blank Rows","Afghanistan, Rep. of.","Afghanistan",Replacer.ReplaceText,{"Country"})
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Blank Rows","Afghanistan, Rep. of.","Afghanistan",Replacer.ReplaceText,{"Country"}),
+				    #"Run Python script" = Python.Execute("import pandas as pd#(lf)import numpy as np#(lf)#(lf)# 'dataset' is the current table in Power Query#(lf)# Get unique Country from current table#(lf)country_table = pd.DataFrame({#(lf)    'Country': sorted(dataset['Country'].unique())#(lf)})#(lf)#(lf)# Return the new dataframe#(lf)country_table",[dataset=#"Replaced Value"]),
+				    country_table = #"Run Python script"{[Name="country_table"]}[Value],
+				    #"Appended Query" = Table.Combine({country_table, #"Internet Usage by Country"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Appended Query",{"Code", "Year", "Cellular Subscription", "Internet Users(%)", "No. of Internet Users", "Broadband Subscription"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns")
 				in
-				    #"Replaced Value"
-
-	annotation PBI_ResultType = Table
+				    #"Removed Duplicates"
 
 	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

@@ -3,17 +3,20 @@ model Model
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	sourceQueryCulture: en-US
 	dataAccessOptions
+		fastCombine
 		legacyRedirects
 		returnErrorValuesAsNull
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["GDP by Country 1999-2022","Internet Usage by Country"]
+annotation PBI_QueryOrder = ["GDP by Country 1999-2022","Internet Usage by Country","Year Table","Country Table"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table 'GDP by Country 1999-2022'
 ref table 'Internet Usage by Country'
+ref table 'Year Table'
+ref table 'Country Table'
 
 ref cultureInfo en-US
 

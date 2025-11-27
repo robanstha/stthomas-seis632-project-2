@@ -22,10 +22,8 @@ table 'Internet Usage by Country'
 		dataType: int64
 		formatString: 0
 		lineageTag: 7284b93f-ce91-454f-a405-09c7da15f957
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Year
-
-		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 

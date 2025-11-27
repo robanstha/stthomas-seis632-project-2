@@ -23,8 +23,8 @@
         },
         {
           "location": {
-            "x": 360,
-            "y": 25
+            "x": 911,
+            "y": 30
           },
           "nodeIndex": "Internet Usage by Country",
           "nodeLineageTag": "2403c7ce-37d4-42af-8ddf-bbe9d96160f5",
@@ -33,6 +33,32 @@
             "width": 234
           },
           "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 500,
+            "y": 233
+          },
+          "nodeIndex": "Year Table",
+          "nodeLineageTag": "e2497f52-966d-472f-bd72-80cf3576207e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 517,
+            "y": 0
+          },
+          "nodeIndex": "Country Table",
+          "nodeLineageTag": "cee5927e-a411-4d7e-8bd5-7dc65219ee27",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
