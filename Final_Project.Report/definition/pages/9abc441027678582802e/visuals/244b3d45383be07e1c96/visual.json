@@ -1,0 +1,152 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "244b3d45383be07e1c96",
+  "position": {
+    "x": 894,
+    "y": 441,
+    "z": 8002,
+    "height": 254,
+    "width": 360,
+    "tabOrder": 8002
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Country Table"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "Country Table.Country",
+              "nativeQueryRef": "Country",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "InternetUsage"
+                        }
+                      },
+                      "Property": "No. of Internet Users"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(InternetUsage.No. of Internet Users)",
+              "nativeQueryRef": "Sum of No. of Internet Users"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "InternetUsage"
+                      }
+                    },
+                    "Property": "No. of Internet Users"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "251ec5de0c670ca00508",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Country Table"
+              }
+            },
+            "Property": "Country"
+          }
+        },
+        "type": "TopN",
+        "isLockedInViewMode": true
+      },
+      {
+        "name": "00940281102a3de40be2",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "InternetUsage"
+                  }
+                },
+                "Property": "No. of Internet Users"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

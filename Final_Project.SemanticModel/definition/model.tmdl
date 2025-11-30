@@ -9,12 +9,12 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["GDP by Country 1999-2022","Internet Usage by Country","Year Table","Country Table"]
+annotation PBI_QueryOrder = ["GDP","InternetUsage","Year Table","Country Table"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
-ref table 'GDP by Country 1999-2022'
-ref table 'Internet Usage by Country'
+ref table GDP
+ref table InternetUsage
 ref table 'Year Table'
 ref table 'Country Table'
 

@@ -1,6 +1,10 @@
 table 'Country Table'
 	lineageTag: cee5927e-a411-4d7e-8bd5-7dc65219ee27
 
+	measure 'Country Count' = DISTINCTCOUNT('Country Table'[Country])
+		formatString: 0
+		lineageTag: 4b2800cd-1fe6-4002-8a88-9866b96b0f0c
+
 	column Country
 		dataType: string
 		lineageTag: 7811ca28-f427-4a51-8ce9-d6e0d2bc39f0
@@ -24,11 +28,12 @@ table 'Country Table'
 				    #"Replaced Value" = Table.ReplaceValue(#"Removed Blank Rows","Afghanistan, Rep. of.","Afghanistan",Replacer.ReplaceText,{"Country"}),
 				    #"Run Python script" = Python.Execute("import pandas as pd#(lf)import numpy as np#(lf)#(lf)# 'dataset' is the current table in Power Query#(lf)# Get unique Country from current table#(lf)country_table = pd.DataFrame({#(lf)    'Country': sorted(dataset['Country'].unique())#(lf)})#(lf)#(lf)# Return the new dataframe#(lf)country_table",[dataset=#"Replaced Value"]),
 				    country_table = #"Run Python script"{[Name="country_table"]}[Value],
-				    #"Appended Query" = Table.Combine({country_table, #"Internet Usage by Country"}),
+				    #"Appended Query" = Table.Combine({country_table, InternetUsage}),
 				    #"Removed Columns" = Table.RemoveColumns(#"Appended Query",{"Code", "Year", "Cellular Subscription", "Internet Users(%)", "No. of Internet Users", "Broadband Subscription"}),
-				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns")
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns"),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Duplicates", each ([Country] <> "World"))
 				in
-				    #"Removed Duplicates"
+				    #"Filtered Rows"
 
 	annotation PBI_NavigationStepName = Navigation
 

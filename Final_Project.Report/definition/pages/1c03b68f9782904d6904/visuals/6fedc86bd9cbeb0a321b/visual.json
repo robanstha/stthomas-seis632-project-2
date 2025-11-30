@@ -1,0 +1,109 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "6fedc86bd9cbeb0a321b",
+  "position": {
+    "x": 159,
+    "y": 87,
+    "z": 6000,
+    "height": 84,
+    "width": 1095,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GDP"
+                    }
+                  },
+                  "Property": "Total GDP"
+                }
+              },
+              "queryRef": "GDP.Total GDP",
+              "nativeQueryRef": "Total GDP"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InternetUsage"
+                    }
+                  },
+                  "Property": "Avg Internet Users"
+                }
+              },
+              "queryRef": "InternetUsage.Avg Internet Users",
+              "nativeQueryRef": "Avg Internet Users"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Country Table"
+                    }
+                  },
+                  "Property": "Country Count"
+                }
+              },
+              "queryRef": "Country Table.Country Count",
+              "nativeQueryRef": "Country Count"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Internet Usage Vs GDP KPI'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -50,3 +50,21 @@ Creating dashboard
 1. Created background and boilerplate using rectangle shapes from Power BI.
 2. Generated logo for team using Generative AI Gemini's Fast LLM Model: https://gemini.google.com/share/bba54de69453
 3. Created bookmarks to create tabs in the dashboard.
+
+Creating calculated fields:
+
+* Renamed original table to GDP and InternetUsage for DAX queries
+
+Total GDP = SUM(GDP[GDP])
+Changed the type to currency and removed extra decimal numbers
+
+Avg Internet Users = AVERAGE(InternetUsage[No. of Internet Users])
+
+Selected Year = 
+IF(
+    HASONEVALUE('Year Table'[Year]),
+    VALUES('Year Table'[Year]),
+    "All Years"
+)
+
+

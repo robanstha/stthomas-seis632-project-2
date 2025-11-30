@@ -1,5 +1,42 @@
-table 'Internet Usage by Country'
+table InternetUsage
 	lineageTag: 2403c7ce-37d4-42af-8ddf-bbe9d96160f5
+
+	measure 'Avg Internet Users' = AVERAGE(InternetUsage[No. of Internet Users])
+		lineageTag: dcbf8fdd-dff9-4d1f-97a0-0968564fdaf7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'YoY Internet Growth %' = ```
+			
+			VAR CurrentYear = [Avg Internet Users]
+			VAR PreviousYr = MAX(InternetUsage[Year]) - 1
+			VAR PreviousYearInternet = 
+			    CALCULATE(
+			        [Avg Internet Users],
+			        InternetUsage[Year] = PreviousYr
+			    )
+			RETURN
+			    IF(
+			        NOT(ISBLANK(PreviousYearInternet)),
+			        DIVIDE(CurrentYear - PreviousYearInternet, PreviousYearInternet) * 100,
+			        BLANK()
+			    )
+			```
+		lineageTag: 6b0f026b-5721-4283-b7fe-2168959c102e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Internet Rank' =
+			
+			RANKX(
+			    ALLSELECTED(InternetUsage[Country]),
+			    [Avg Internet Users],
+			    ,
+			    DESC,
+			    Dense
+			)
+		formatString: 0
+		lineageTag: 29689063-52a7-4d1c-b257-aa7e56a3172c
 
 	column Country
 		dataType: string
@@ -66,7 +103,20 @@ table 'Internet Usage by Country'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition 'Internet Usage by Country' = m
+	column 'Avg Internet Usage % for color' =
+			
+			SWITCH(
+			    TRUE(),
+			    [Avg Internet Users] < 50, "Low",
+			    [Avg Internet Users] < 100, "Medium",
+			    "High"
+			)
+		lineageTag: ac4108e6-d4c7-4e22-bdfe-60e64f5c5c4b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition InternetUsage = m
 		mode: import
 		source =
 				let
@@ -74,9 +124,10 @@ table 'Internet Usage by Country'
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"", Int64.Type}, {"Entity", type text}, {"Code", type text}, {"Year", Int64.Type}, {"Cellular Subscription", type number}, {"Internet Users(%)", type number}, {"No. of Internet Users", Int64.Type}, {"Broadband Subscription", type number}}),
 				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{Table.ColumnNames(#"Changed Type"){0}}),
-				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Entity", "Country"}})
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Entity", "Country"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns", each ([Cellular Subscription] <> 0) and ([Broadband Subscription] <> 0) and ([No. of Internet Users] <> 0) and ([Country] <> "World"))
 				in
-				    #"Renamed Columns"
+				    #"Filtered Rows"
 
 	annotation PBI_ResultType = Table
 

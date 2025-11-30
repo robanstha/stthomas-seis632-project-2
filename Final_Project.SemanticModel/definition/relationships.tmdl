@@ -1,16 +1,16 @@
 relationship AutoDetected_dfe1cc99-e2da-40bf-8f27-2d190cb12371
-	fromColumn: 'GDP by Country 1999-2022'.Year
+	fromColumn: GDP.Year
 	toColumn: 'Year Table'.Year
 
 relationship AutoDetected_e1c174dd-0d52-440f-ba04-afccae48ffad
-	fromColumn: 'Internet Usage by Country'.Year
+	fromColumn: InternetUsage.Year
 	toColumn: 'Year Table'.Year
 
 relationship AutoDetected_f6432318-ab31-48a6-9d44-e2d07ca7cc49
-	fromColumn: 'GDP by Country 1999-2022'.Country
+	fromColumn: GDP.Country
 	toColumn: 'Country Table'.Country
 
 relationship AutoDetected_45821f62-71e9-446b-a172-aeb23839ebc4
-	fromColumn: 'Internet Usage by Country'.Country
+	fromColumn: InternetUsage.Country
 	toColumn: 'Country Table'.Country
 

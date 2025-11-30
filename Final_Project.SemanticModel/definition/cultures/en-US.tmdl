@@ -2,8 +2,2213 @@ cultureInfo en-US
 
 	linguisticMetadata =
 			{
-			  "Version": "1.0.0",
-			  "Language": "en-US"
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "gdp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GDP"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gdp": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "gdp.country": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GDP",
+			          "ConceptualProperty": "Country"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "country": {
+			            "Type": "Noun",
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Location"
+			    },
+			    "gdp.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GDP",
+			          "ConceptualProperty": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "year": {
+			            "Type": "Noun",
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "gdp.GDP_billions": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GDP",
+			          "ConceptualProperty": "GDP (Billions)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GDP (billions)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "GDP (billion)": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "GDP": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "GDP (Billions in USD)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "gdp.total_GDP": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GDP",
+			          "ConceptualProperty": "Total GDP"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total GDP": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate gdp": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall gdp": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "gdp.YoY_GDP_growth_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GDP",
+			          "ConceptualProperty": "YoY GDP Growth %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "YoY GDP growth %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yoy gdp growth percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "yoy gdp growth pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        }
+			      ]
+			    },
+			    "gdp.GDP_rank": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GDP",
+			          "ConceptualProperty": "GDP Rank"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GDP rank": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "internet_usage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InternetUsage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "internet usage": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "InternetUsage": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "usage": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "internet tradition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "internet procedure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "internet convention": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "internet norm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "tradition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "procedure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "convention": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "norm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "internet practice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "internet custom": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "internet_usage.country": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InternetUsage",
+			          "ConceptualProperty": "Country"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "country": {
+			            "Type": "Noun",
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Location"
+			    },
+			    "internet_usage.code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InternetUsage",
+			          "ConceptualProperty": "Code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "code": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "internet_usage.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InternetUsage",
+			          "ConceptualProperty": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "year": {
+			            "Type": "Noun",
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "internet_usage.cellular_subscription": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InternetUsage",
+			          "ConceptualProperty": "Cellular Subscription"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cellular subscription": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "subscription": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "cellular payment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "cellular donation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "cellular contribution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "payment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "donation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "contribution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "internet_usage.internet_user": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InternetUsage",
+			          "ConceptualProperty": "Internet Users(%)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "internet user": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "internet user (%)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Internet Users(%)": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "user": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "internet operator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "internet worker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "internet employer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "internet manipulator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "internet handler": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "internet manager": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "operator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "worker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "employer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "manipulator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ],
+			      "Units": [
+			        "percentage",
+			        "%"
+			      ]
+			    },
+			    "internet_usage.no__of_internet_users": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InternetUsage",
+			          "ConceptualProperty": "No. of Internet Users"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "no. of internet users": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "no. of internet user": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "number . of internet user": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "internet_usage.broadband_subscription": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InternetUsage",
+			          "ConceptualProperty": "Broadband Subscription"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "broadband subscription": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "subscription": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "broadband payment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "broadband donation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "broadband contribution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "payment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "donation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "contribution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "internet_usage.avg_internet_users": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InternetUsage",
+			          "ConceptualProperty": "Avg Internet Users"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "avg internet users": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "average internet user": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "avg internet operator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "avg internet worker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "avg internet employer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "avg internet manipulator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "avg internet handler": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "avg internet manager": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "avg internet consumer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "avg internet customer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "avg internet client": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        }
+			      ]
+			    },
+			    "internet_usage.YoY_internet_growth_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InternetUsage",
+			          "ConceptualProperty": "YoY Internet Growth %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "YoY internet growth %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yoy internet growth percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "yoy internet growth pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        }
+			      ]
+			    },
+			    "internet_usage.internet_rank": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InternetUsage",
+			          "ConceptualProperty": "Internet Rank"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "internet rank": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "year_table": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Year Table"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year table": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yr table": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "year tabletop": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "year bench": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "year board": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "year counter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "year stand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "year slab": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "year desk": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "year stall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "year table top": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "year_table.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Year Table",
+			          "ConceptualProperty": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "year_table.selected_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Year Table",
+			          "ConceptualProperty": "Selected Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "selected yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "country_table": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Country Table"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "country table": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nation table": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "location table": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "country tabletop": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "country bench": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "country board": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "country counter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "country stand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "country slab": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "country desk": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "country stall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "country_table.country": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Country Table",
+			          "ConceptualProperty": "Country"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "country": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "country_table.country_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Country Table",
+			          "ConceptualProperty": "Country Count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "country count": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "country amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "nation count": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "location count": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "gdp_is_expensive": {
+			      "Binding": {
+			        "ConceptualEntity": "GDP"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gdp": {
+			          "Target": {
+			            "Entity": "gdp"
+			          }
+			        },
+			        "gdp.GDP_billions": {
+			          "Target": {
+			            "Entity": "gdp.GDP_billions"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "gdp"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "gdp.GDP_billions"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "GDP_billions_indicates_how_expensive_gdp_are"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gdp"
+			            },
+			            "Object": {
+			              "Role": "gdp.GDP_billions"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gdp_have_GDP_billions"
+			        }
+			      ]
+			    },
+			    "country_table_in_country": {
+			      "Binding": {
+			        "ConceptualEntity": "Country Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "country_table": {
+			          "Target": {
+			            "Entity": "country_table"
+			          }
+			        },
+			        "country_table.country": {
+			          "Target": {
+			            "Entity": "country_table.country"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "country_table.country"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "country_table"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "country_table.country"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "country_tables_are_in_countries"
+			        }
+			      ]
+			    },
+			    "gdp_in_country_table": {
+			      "Binding": {
+			        "ConceptualEntity": "GDP"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gdp": {
+			          "Target": {
+			            "Entity": "gdp"
+			          }
+			        },
+			        "country_table": {
+			          "Target": {
+			            "Entity": "country_table"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "country_table"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "gdp"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "country_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gdp_are_in_country_tables"
+			        }
+			      ]
+			    },
+			    "internet_usage_in_country_table": {
+			      "Binding": {
+			        "ConceptualEntity": "InternetUsage"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "internet_usage": {
+			          "Target": {
+			            "Entity": "internet_usage"
+			          }
+			        },
+			        "country_table": {
+			          "Target": {
+			            "Entity": "country_table"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "country_table"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "internet_usage"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "country_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "internet_usages_are_in_country_tables"
+			        }
+			      ]
+			    },
+			    "gdp_has_total_GDP": {
+			      "Binding": {
+			        "ConceptualEntity": "GDP"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gdp": {
+			          "Target": {
+			            "Entity": "gdp"
+			          }
+			        },
+			        "gdp.total_GDP": {
+			          "Target": {
+			            "Entity": "gdp.total_GDP"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gdp"
+			            },
+			            "Object": {
+			              "Role": "gdp.total_GDP"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gdp_have_total_GDP"
+			        }
+			      ]
+			    },
+			    "gdp_has_YoY_GDP_growth_": {
+			      "Binding": {
+			        "ConceptualEntity": "GDP"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gdp": {
+			          "Target": {
+			            "Entity": "gdp"
+			          }
+			        },
+			        "gdp.YoY_GDP_growth_": {
+			          "Target": {
+			            "Entity": "gdp.YoY_GDP_growth_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gdp"
+			            },
+			            "Object": {
+			              "Role": "gdp.YoY_GDP_growth_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gdp_have_YoY_GDP_growth_"
+			        }
+			      ]
+			    },
+			    "gdp_has_GDP_rank": {
+			      "Binding": {
+			        "ConceptualEntity": "GDP"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gdp": {
+			          "Target": {
+			            "Entity": "gdp"
+			          }
+			        },
+			        "gdp.GDP_rank": {
+			          "Target": {
+			            "Entity": "gdp.GDP_rank"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gdp"
+			            },
+			            "Object": {
+			              "Role": "gdp.GDP_rank"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gdp_have_GDP_rank"
+			        }
+			      ]
+			    },
+			    "internet_usage_has_code": {
+			      "Binding": {
+			        "ConceptualEntity": "InternetUsage"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "internet_usage": {
+			          "Target": {
+			            "Entity": "internet_usage"
+			          }
+			        },
+			        "internet_usage.code": {
+			          "Target": {
+			            "Entity": "internet_usage.code"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "internet_usage"
+			            },
+			            "Object": {
+			              "Role": "internet_usage.code"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "internet_usages_have_codes"
+			        }
+			      ]
+			    },
+			    "internet_usage_has_cellular_subscription": {
+			      "Binding": {
+			        "ConceptualEntity": "InternetUsage"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "internet_usage": {
+			          "Target": {
+			            "Entity": "internet_usage"
+			          }
+			        },
+			        "internet_usage.cellular_subscription": {
+			          "Target": {
+			            "Entity": "internet_usage.cellular_subscription"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "internet_usage"
+			            },
+			            "Object": {
+			              "Role": "internet_usage.cellular_subscription"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "internet_usages_have_cellular_subscriptions"
+			        }
+			      ]
+			    },
+			    "internet_usage_has_internet_user": {
+			      "Binding": {
+			        "ConceptualEntity": "InternetUsage"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "internet_usage": {
+			          "Target": {
+			            "Entity": "internet_usage"
+			          }
+			        },
+			        "internet_usage.internet_user": {
+			          "Target": {
+			            "Entity": "internet_usage.internet_user"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "internet_usage"
+			            },
+			            "Object": {
+			              "Role": "internet_usage.internet_user"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "internet_usages_have_internet_users"
+			        }
+			      ]
+			    },
+			    "internet_usage_has_no__of_internet_users": {
+			      "Binding": {
+			        "ConceptualEntity": "InternetUsage"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "internet_usage": {
+			          "Target": {
+			            "Entity": "internet_usage"
+			          }
+			        },
+			        "internet_usage.no__of_internet_users": {
+			          "Target": {
+			            "Entity": "internet_usage.no__of_internet_users"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "internet_usage"
+			            },
+			            "Object": {
+			              "Role": "internet_usage.no__of_internet_users"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "internet_usages_have_no__of_internet_users"
+			        }
+			      ]
+			    },
+			    "internet_usage_has_broadband_subscription": {
+			      "Binding": {
+			        "ConceptualEntity": "InternetUsage"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "internet_usage": {
+			          "Target": {
+			            "Entity": "internet_usage"
+			          }
+			        },
+			        "internet_usage.broadband_subscription": {
+			          "Target": {
+			            "Entity": "internet_usage.broadband_subscription"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "internet_usage"
+			            },
+			            "Object": {
+			              "Role": "internet_usage.broadband_subscription"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "internet_usages_have_broadband_subscriptions"
+			        }
+			      ]
+			    },
+			    "internet_usage_has_avg_internet_users": {
+			      "Binding": {
+			        "ConceptualEntity": "InternetUsage"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "internet_usage": {
+			          "Target": {
+			            "Entity": "internet_usage"
+			          }
+			        },
+			        "internet_usage.avg_internet_users": {
+			          "Target": {
+			            "Entity": "internet_usage.avg_internet_users"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "internet_usage"
+			            },
+			            "Object": {
+			              "Role": "internet_usage.avg_internet_users"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "internet_usages_have_avg_internet_users"
+			        }
+			      ]
+			    },
+			    "internet_usage_has_YoY_internet_growth_": {
+			      "Binding": {
+			        "ConceptualEntity": "InternetUsage"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "internet_usage": {
+			          "Target": {
+			            "Entity": "internet_usage"
+			          }
+			        },
+			        "internet_usage.YoY_internet_growth_": {
+			          "Target": {
+			            "Entity": "internet_usage.YoY_internet_growth_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "internet_usage"
+			            },
+			            "Object": {
+			              "Role": "internet_usage.YoY_internet_growth_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "internet_usages_have_YoY_internet_growth_"
+			        }
+			      ]
+			    },
+			    "internet_usage_has_internet_rank": {
+			      "Binding": {
+			        "ConceptualEntity": "InternetUsage"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "internet_usage": {
+			          "Target": {
+			            "Entity": "internet_usage"
+			          }
+			        },
+			        "internet_usage.internet_rank": {
+			          "Target": {
+			            "Entity": "internet_usage.internet_rank"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "internet_usage"
+			            },
+			            "Object": {
+			              "Role": "internet_usage.internet_rank"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "internet_usages_have_internet_rank"
+			        }
+			      ]
+			    },
+			    "year_table_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Year Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "year_table": {
+			          "Target": {
+			            "Entity": "year_table"
+			          }
+			        },
+			        "year_table.year": {
+			          "Target": {
+			            "Entity": "year_table.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "year_table"
+			            },
+			            "Object": {
+			              "Role": "year_table.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "year_tables_have_years"
+			        }
+			      ]
+			    },
+			    "year_table_has_selected_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Year Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "year_table": {
+			          "Target": {
+			            "Entity": "year_table"
+			          }
+			        },
+			        "year_table.selected_year": {
+			          "Target": {
+			            "Entity": "year_table.selected_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "year_table"
+			            },
+			            "Object": {
+			              "Role": "year_table.selected_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "year_tables_have_selected_year"
+			        }
+			      ]
+			    },
+			    "country_table_has_country": {
+			      "Binding": {
+			        "ConceptualEntity": "Country Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "country_table": {
+			          "Target": {
+			            "Entity": "country_table"
+			          }
+			        },
+			        "country_table.country": {
+			          "Target": {
+			            "Entity": "country_table.country"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "country_table"
+			            },
+			            "Object": {
+			              "Role": "country_table.country"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "country_tables_have_countries"
+			        }
+			      ]
+			    },
+			    "country_table_has_country_count": {
+			      "Binding": {
+			        "ConceptualEntity": "Country Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "country_table": {
+			          "Target": {
+			            "Entity": "country_table"
+			          }
+			        },
+			        "country_table.country_count": {
+			          "Target": {
+			            "Entity": "country_table.country_count"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "country_table"
+			            },
+			            "Object": {
+			              "Role": "country_table.country_count"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "country_tables_have_country_count"
+			        }
+			      ]
+			    },
+			    "gdp_has_year_table": {
+			      "Binding": {
+			        "ConceptualEntity": "GDP"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gdp": {
+			          "Target": {
+			            "Entity": "gdp"
+			          }
+			        },
+			        "year_table": {
+			          "Target": {
+			            "Entity": "year_table"
+			          },
+			          "Nouns": [
+			            {
+			              "year": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gdp"
+			            },
+			            "Object": {
+			              "Role": "year_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gdp_have_year_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "year_table"
+			            },
+			            "Object": {
+			              "Role": "gdp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "year_tables_have_gdp"
+			        }
+			      ]
+			    },
+			    "gdp_has_country_table": {
+			      "Binding": {
+			        "ConceptualEntity": "GDP"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gdp": {
+			          "Target": {
+			            "Entity": "gdp"
+			          }
+			        },
+			        "country_table": {
+			          "Target": {
+			            "Entity": "country_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gdp"
+			            },
+			            "Object": {
+			              "Role": "country_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gdp_have_country_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "country_table"
+			            },
+			            "Object": {
+			              "Role": "gdp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "country_tables_have_gdp"
+			        }
+			      ]
+			    },
+			    "internet_usage_has_year_table": {
+			      "Binding": {
+			        "ConceptualEntity": "InternetUsage"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "internet_usage": {
+			          "Target": {
+			            "Entity": "internet_usage"
+			          }
+			        },
+			        "year_table": {
+			          "Target": {
+			            "Entity": "year_table"
+			          },
+			          "Nouns": [
+			            {
+			              "year": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "internet_usage"
+			            },
+			            "Object": {
+			              "Role": "year_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "internet_usages_have_year_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "year_table"
+			            },
+			            "Object": {
+			              "Role": "internet_usage"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "year_tables_have_internet_usages"
+			        }
+			      ]
+			    },
+			    "internet_usage_has_country_table": {
+			      "Binding": {
+			        "ConceptualEntity": "InternetUsage"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "internet_usage": {
+			          "Target": {
+			            "Entity": "internet_usage"
+			          }
+			        },
+			        "country_table": {
+			          "Target": {
+			            "Entity": "country_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "internet_usage"
+			            },
+			            "Object": {
+			              "Role": "country_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "internet_usages_have_country_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "country_table"
+			            },
+			            "Object": {
+			              "Role": "internet_usage"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "country_tables_have_internet_usages"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
 			}
 		contentType: json
 

@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
-  "displayName": "Main",
+  "displayName": "GDP and Internet Usage Trend",
   "name": "887391540db2803b601a",
   "options": {
     "targetVisualNames": []

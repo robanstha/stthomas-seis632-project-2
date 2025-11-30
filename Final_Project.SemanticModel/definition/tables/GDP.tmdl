@@ -1,5 +1,43 @@
-table 'GDP by Country 1999-2022'
+table GDP
 	lineageTag: 6bcac93b-49f7-4808-85e1-aa33f0539acf
+
+	measure 'Total GDP' = SUM(GDP[GDP (Billions)])*1000000000
+		formatString: \$#,0.0;(\$#,0.0);\$#,0.0
+		lineageTag: 26aee8c2-5094-4a62-b2ea-c087f78d3597
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'YoY GDP Growth %' = ```
+			
+			VAR CurrentYearGDP = [Total GDP]
+			VAR PreviousYr = MAX(GDP[Year]) - 1
+			VAR PreviousYearGDP = 
+			    CALCULATE(
+			        [Total GDP],
+			        GDP[Year] = PreviousYr
+			    )
+			RETURN
+			    IF(
+			        NOT(ISBLANK(PreviousYearGDP)),
+			        DIVIDE(CurrentYearGDP - PreviousYearGDP, PreviousYearGDP) * 100,
+			        BLANK()
+			    )
+			```
+		lineageTag: bad6aec1-3aac-4295-bb17-b721f5d25a3b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'GDP Rank' =
+			
+			RANKX(
+			    ALLSELECTED(GDP[Country]),
+			    [Total GDP],
+			    ,
+			    DESC,
+			    Dense
+			)
+		formatString: 0
+		lineageTag: 1309fbef-e1ca-4599-b061-13354bfcb2bc
 
 	column Country
 		dataType: string
@@ -19,17 +57,16 @@ table 'GDP by Country 1999-2022'
 
 		annotation SummarizationSetBy = Automatic
 
-	column GDP
+	column 'GDP (Billions)'
 		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: fe9589d2-c0ff-4e64-9c6b-3bbae21c57d1
 		summarizeBy: sum
-		sourceColumn: GDP
+		sourceColumn: GDP (Billions)
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	partition 'GDP by Country 1999-2022' = m
+	partition GDP = m
 		mode: import
 		source =
 				let
@@ -41,9 +78,11 @@ table 'GDP by Country 1999-2022'
 				    #"Extracted Year" = Table.TransformColumns(#"Changed Type1",{{"Attribute", Date.Year, Int64.Type}}),
 				    #"Renamed Columns" = Table.RenameColumns(#"Extracted Year",{{"Attribute", "Year"}, {"Value", "GDP"}}),
 				    #"Removed Blank Rows" = Table.SelectRows(#"Renamed Columns", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
-				    #"Replaced Value" = Table.ReplaceValue(#"Removed Blank Rows","Afghanistan, Rep. of.","Afghanistan",Replacer.ReplaceText,{"Country"})
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Blank Rows","Afghanistan, Rep. of.","Afghanistan",Replacer.ReplaceText,{"Country"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Replaced Value",{{"GDP", "GDP (Billions)"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns1", each ([#"GDP (Billions)"] <> 0))
 				in
-				    #"Replaced Value"
+				    #"Filtered Rows"
 
 	annotation PBI_ResultType = Table
 
