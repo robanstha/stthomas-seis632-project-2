@@ -125,7 +125,7 @@ table InternetUsage
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"", Int64.Type}, {"Entity", type text}, {"Code", type text}, {"Year", Int64.Type}, {"Cellular Subscription", type number}, {"Internet Users(%)", type number}, {"No. of Internet Users", Int64.Type}, {"Broadband Subscription", type number}}),
 				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{Table.ColumnNames(#"Changed Type"){0}}),
 				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Entity", "Country"}}),
-				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns", each ([Cellular Subscription] <> 0) and ([Broadband Subscription] <> 0) and ([No. of Internet Users] <> 0) and ([Country] <> "World"))
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns", each ([Cellular Subscription] <> 0) and ([Broadband Subscription] <> 0) and ([No. of Internet Users] <> 0) and ([Country] <> "World") and ([Year] <> 1998 and [Year] <> 1999))
 				in
 				    #"Filtered Rows"
 

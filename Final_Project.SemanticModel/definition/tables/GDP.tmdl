@@ -80,7 +80,7 @@ table GDP
 				    #"Removed Blank Rows" = Table.SelectRows(#"Renamed Columns", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
 				    #"Replaced Value" = Table.ReplaceValue(#"Removed Blank Rows","Afghanistan, Rep. of.","Afghanistan",Replacer.ReplaceText,{"Country"}),
 				    #"Renamed Columns1" = Table.RenameColumns(#"Replaced Value",{{"GDP", "GDP (Billions)"}}),
-				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns1", each ([#"GDP (Billions)"] <> 0))
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns1", each ([#"GDP (Billions)"] <> 0) and ([Year] <> 1999 and [Year] <> 2021 and [Year] <> 2022))
 				in
 				    #"Filtered Rows"
 

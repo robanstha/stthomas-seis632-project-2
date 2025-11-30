@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Country Table"
+                      "Entity": "GDP"
                     }
                   },
                   "Property": "Country"
                 }
               },
-              "queryRef": "Country Table.Country",
+              "queryRef": "GDP.Country",
               "nativeQueryRef": "Country",
               "active": true
             }
@@ -66,8 +66,7 @@
             },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "visualContainerObjects": {
@@ -84,7 +83,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 Countries by GDP'"
+                  "Value": "'Top Countries by GDP'"
                 }
               }
             }
@@ -96,20 +95,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "52f2d5c6864168e70a32",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Country Table"
-              }
-            },
-            "Property": "Country"
-          }
-        },
-        "type": "TopN"
-      },
       {
         "name": "cf94adf203100865e665",
         "field": {

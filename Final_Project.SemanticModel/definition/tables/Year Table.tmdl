@@ -41,9 +41,11 @@ table 'Year Table'
 				    #"Changed Type2" = Table.TransformColumnTypes(year_table,{{"Year", Int64.Type}}),
 				    #"Appended Query" = Table.Combine({#"Changed Type2", InternetUsage}),
 				    #"Removed Columns" = Table.RemoveColumns(#"Appended Query",{"Country", "Code", "Cellular Subscription", "Internet Users(%)", "No. of Internet Users", "Broadband Subscription"}),
-				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns")
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns"),
+				    #"Sorted Rows" = Table.Sort(#"Removed Duplicates",{{"Year", Order.Ascending}}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Sorted Rows", each ([Year] <> 1999 and [Year] <> 2021 and [Year] <> 2022))
 				in
-				    #"Removed Duplicates"
+				    #"Filtered Rows1"
 
 	annotation PBI_NavigationStepName = Navigation
 
