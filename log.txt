@@ -68,3 +68,56 @@ IF(
 )
 
 
+YoY GDP Growth % = 
+VAR CurrentYearGDP = [Total GDP]
+VAR PreviousYr = MAX(GDP[Year]) - 1
+VAR PreviousYearGDP = 
+    CALCULATE(
+        [Total GDP],
+        GDP[Year] = PreviousYr
+    )
+RETURN
+    IF(
+        NOT(ISBLANK(PreviousYearGDP)),
+        DIVIDE(CurrentYearGDP - PreviousYearGDP, PreviousYearGDP) * 100,
+        BLANK()
+    )
+
+
+YoY Internet Growth % = 
+VAR CurrentYear = [Avg Internet Users]
+VAR PreviousYr = MAX(InternetUsage[Year]) - 1
+VAR PreviousYearInternet = 
+    CALCULATE(
+        [Avg Internet Users],
+        InternetUsage[Year] = PreviousYr
+    )
+RETURN
+    IF(
+        NOT(ISBLANK(PreviousYearInternet)),
+        DIVIDE(CurrentYear - PreviousYearInternet, PreviousYearInternet) * 100,
+        BLANK()
+    )
+
+
+GDP Rank = 
+RANKX(
+    ALLSELECTED(GDP[Country]),
+    [Total GDP],
+    ,
+    DESC,
+    Dense
+)
+
+Internet Rank = 
+RANKX(
+    ALLSELECTED(InternetUsage[Country]),
+    [Avg Internet Users],
+    ,
+    DESC,
+    Dense
+)
+
+
+
+
