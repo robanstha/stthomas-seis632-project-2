@@ -39,6 +39,16 @@ table GDP
 		formatString: 0
 		lineageTag: 1309fbef-e1ca-4599-b061-13354bfcb2bc
 
+	measure 'Country Total GDP' =
+			
+			CALCULATE(
+			    SUM(GDP[GDP (Billions)]),
+			    ALL(GDP[Year])
+			)
+		lineageTag: 3fd5d832-1647-4237-a57b-86bacbfccefa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Country
 		dataType: string
 		lineageTag: 77a58936-f53b-457f-a888-745ff97965dd
@@ -63,6 +73,20 @@ table GDP
 		lineageTag: fe9589d2-c0ff-4e64-9c6b-3bbae21c57d1
 		summarizeBy: sum
 		sourceColumn: GDP (Billions)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Country Sort Order' =
+			
+			SUMX(
+			    FILTER(
+			        GDP,
+			        GDP[Country] = EARLIER(GDP[Country])
+			    ),
+			    GDP[]
+			)
+		lineageTag: 6792992a-b6ca-4c35-9c15-a02c9cc038bb
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 

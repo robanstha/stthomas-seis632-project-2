@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "662fd4a59b6913050c69",
   "position": {
-    "x": 883,
-    "y": 171,
-    "z": 8001,
-    "height": 261,
-    "width": 371,
-    "tabOrder": 8001
+    "x": 881.16653875671523,
+    "y": 204.32847275518034,
+    "z": 9000,
+    "height": 232.81657712970068,
+    "width": 376.23944742900994,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "columnChart",
@@ -52,21 +52,7 @@
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "GDP"
-                  }
-                },
-                "Property": "Total GDP"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
+        "isDefaultSort": true
       }
     },
     "visualContainerObjects": {
@@ -92,23 +78,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cf94adf203100865e665",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "GDP"
-              }
-            },
-            "Property": "Total GDP"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "f306ecb8324c30b10e38",
   "position": {
-    "x": 159,
-    "y": 171,
+    "x": 159.14044512663085,
+    "y": 214.15195702225631,
     "z": 7000,
-    "height": 526,
-    "width": 588,
+    "height": 483.31542594013808,
+    "width": 587.44435917114345,
     "tabOrder": 7000
   },
   "visual": {
@@ -225,72 +225,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "8a92de8e7350d4e723a3",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "GDP"
-                  }
-                },
-                "Property": "GDP (Billions)"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ebc85a0690b309772ce8",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "InternetUsage"
-                  }
-                },
-                "Property": "No. of Internet Users"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8abc94365971098d2d02",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Country Table"
-              }
-            },
-            "Property": "Country"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "163a190c235418255b52",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "GDP"
-              }
-            },
-            "Property": "Total GDP"
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "b3acade6de161721b236",
         "field": {

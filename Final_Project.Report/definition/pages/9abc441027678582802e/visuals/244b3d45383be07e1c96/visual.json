@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "244b3d45383be07e1c96",
   "position": {
-    "x": 894,
-    "y": 441,
-    "z": 8002,
-    "height": 254,
-    "width": 360,
-    "tabOrder": 8002
+    "x": 876.25479662317719,
+    "y": 437.145049884881,
+    "z": 10000,
+    "height": 257.37528779739063,
+    "width": 388.02762854950112,
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "columnChart",
@@ -57,26 +57,7 @@
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Aggregation": {
-                "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "InternetUsage"
-                      }
-                    },
-                    "Property": "No. of Internet Users"
-                  }
-                },
-                "Function": 0
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -148,25 +129,6 @@
         "type": "TopN",
         "howCreated": "User",
         "isLockedInViewMode": true
-      },
-      {
-        "name": "00940281102a3de40be2",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "InternetUsage"
-                  }
-                },
-                "Property": "No. of Internet Users"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

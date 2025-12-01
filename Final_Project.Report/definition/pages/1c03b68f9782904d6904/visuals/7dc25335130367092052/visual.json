@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "96772bf3e6a40e28e87d",
+  "name": "7dc25335130367092052",
   "position": {
-    "x": 175,
-    "y": 22.5,
-    "z": 1000,
-    "height": 50,
-    "width": 600,
-    "tabOrder": 2000
+    "x": 166.016884113584,
+    "y": 70.729086722947045,
+    "z": 9001,
+    "height": 35.364543361473523,
+    "width": 508.85648503453564,
+    "tabOrder": 9001
   },
   "visual": {
     "visualType": "bookmarkNavigator",
@@ -132,7 +132,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "12D"
                 }
               }
             }
@@ -146,7 +146,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "12D"
                 }
               }
             },
@@ -179,7 +179,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "12D"
                 }
               }
             },
@@ -212,7 +212,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "12D"
                 }
               }
             },
@@ -255,6 +255,21 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabs'"
                 }
               }
             }
