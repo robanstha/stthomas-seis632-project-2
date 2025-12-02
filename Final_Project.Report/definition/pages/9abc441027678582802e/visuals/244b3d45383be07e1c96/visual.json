@@ -57,7 +57,26 @@
         }
       },
       "sortDefinition": {
-        "isDefaultSort": true
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "InternetUsage"
+                      }
+                    },
+                    "Property": "No. of Internet Users"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "objects": {
@@ -103,6 +122,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'Top Countries by Internet Usage'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bar graph to show Top Countries by Internet Usage'"
                 }
               }
             }

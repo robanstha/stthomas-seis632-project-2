@@ -111,6 +111,21 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Filters to filter dashboard graph with the dates selected between the sliders value'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "syncGroup": {
       "groupName": "Year",
       "fieldChanges": true,

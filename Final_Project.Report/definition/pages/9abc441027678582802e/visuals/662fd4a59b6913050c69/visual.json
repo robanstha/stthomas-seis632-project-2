@@ -52,7 +52,21 @@
         }
       },
       "sortDefinition": {
-        "isDefaultSort": true
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "GDP"
+                  }
+                },
+                "Property": "Total GDP"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "visualContainerObjects": {
@@ -70,6 +84,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'Top Countries by GDP'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bar graph to show Top Countries by GDP'"
                 }
               }
             }

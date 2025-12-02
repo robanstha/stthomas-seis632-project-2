@@ -269,7 +269,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Tabs'"
+                  "Value": "'Tabs to switch dashboard view'"
                 }
               }
             }
