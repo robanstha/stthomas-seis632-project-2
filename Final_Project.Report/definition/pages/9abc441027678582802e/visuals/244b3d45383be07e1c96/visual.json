@@ -161,6 +161,11 @@
         "type": "TopN",
         "howCreated": "User",
         "isLockedInViewMode": true
+      },
+      {
+        "name": "7e77f8b9157b2d9dc56e",
+        "type": "Exclude",
+        "howCreated": "Exclude"
       }
     ]
   }

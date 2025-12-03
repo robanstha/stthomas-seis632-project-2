@@ -118,94 +118,123 @@
                       "Cases": [
                         {
                           "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
+                            "And": {
                               "Left": {
-                                "Aggregation": {
-                                  "Expression": {
-                                    "Column": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Aggregation": {
                                       "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "InternetUsage"
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Entity": "InternetUsage"
+                                            }
+                                          },
+                                          "Property": "Internet Users(%)"
                                         }
                                       },
-                                      "Property": "Internet Users(%)"
+                                      "Function": 0
                                     }
                                   },
-                                  "Function": 0
+                                  "Right": {
+                                    "RangePercent": {
+                                      "Min": {
+                                        "ScopedEval": {
+                                          "Expression": {
+                                            "Aggregation": {
+                                              "Expression": {
+                                                "ScopedEval": {
+                                                  "Expression": {
+                                                    "Aggregation": {
+                                                      "Expression": {
+                                                        "Column": {
+                                                          "Expression": {
+                                                            "SourceRef": {
+                                                              "Entity": "InternetUsage"
+                                                            }
+                                                          },
+                                                          "Property": "Internet Users(%)"
+                                                        }
+                                                      },
+                                                      "Function": 0
+                                                    }
+                                                  },
+                                                  "Scope": [
+                                                    {
+                                                      "AllRolesRef": {}
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "Function": 3
+                                            }
+                                          },
+                                          "Scope": []
+                                        }
+                                      },
+                                      "Max": {
+                                        "ScopedEval": {
+                                          "Expression": {
+                                            "Aggregation": {
+                                              "Expression": {
+                                                "ScopedEval": {
+                                                  "Expression": {
+                                                    "Aggregation": {
+                                                      "Expression": {
+                                                        "Column": {
+                                                          "Expression": {
+                                                            "SourceRef": {
+                                                              "Entity": "InternetUsage"
+                                                            }
+                                                          },
+                                                          "Property": "Internet Users(%)"
+                                                        }
+                                                      },
+                                                      "Function": 0
+                                                    }
+                                                  },
+                                                  "Scope": [
+                                                    {
+                                                      "AllRolesRef": {}
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "Function": 4
+                                            }
+                                          },
+                                          "Scope": []
+                                        }
+                                      },
+                                      "Percent": 0.75
+                                    }
+                                  }
                                 }
                               },
                               "Right": {
-                                "RangePercent": {
-                                  "Min": {
-                                    "ScopedEval": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Aggregation": {
                                       "Expression": {
-                                        "Aggregation": {
+                                        "Column": {
                                           "Expression": {
-                                            "ScopedEval": {
-                                              "Expression": {
-                                                "Aggregation": {
-                                                  "Expression": {
-                                                    "Column": {
-                                                      "Expression": {
-                                                        "SourceRef": {
-                                                          "Entity": "InternetUsage"
-                                                        }
-                                                      },
-                                                      "Property": "Internet Users(%)"
-                                                    }
-                                                  },
-                                                  "Function": 0
-                                                }
-                                              },
-                                              "Scope": [
-                                                {
-                                                  "AllRolesRef": {}
-                                                }
-                                              ]
+                                            "SourceRef": {
+                                              "Entity": "InternetUsage"
                                             }
                                           },
-                                          "Function": 3
+                                          "Property": "Internet Users(%)"
                                         }
                                       },
-                                      "Scope": []
+                                      "Function": 0
                                     }
                                   },
-                                  "Max": {
-                                    "ScopedEval": {
-                                      "Expression": {
-                                        "Aggregation": {
-                                          "Expression": {
-                                            "ScopedEval": {
-                                              "Expression": {
-                                                "Aggregation": {
-                                                  "Expression": {
-                                                    "Column": {
-                                                      "Expression": {
-                                                        "SourceRef": {
-                                                          "Entity": "InternetUsage"
-                                                        }
-                                                      },
-                                                      "Property": "Internet Users(%)"
-                                                    }
-                                                  },
-                                                  "Function": 0
-                                                }
-                                              },
-                                              "Scope": [
-                                                {
-                                                  "AllRolesRef": {}
-                                                }
-                                              ]
-                                            }
-                                          },
-                                          "Function": 4
-                                        }
-                                      },
-                                      "Scope": []
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "101D"
                                     }
-                                  },
-                                  "Percent": 1
+                                  }
                                 }
                               }
                             }
@@ -218,94 +247,191 @@
                         },
                         {
                           "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 2,
+                            "And": {
                               "Left": {
-                                "Aggregation": {
-                                  "Expression": {
-                                    "Column": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Aggregation": {
                                       "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "InternetUsage"
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Entity": "InternetUsage"
+                                            }
+                                          },
+                                          "Property": "Internet Users(%)"
                                         }
                                       },
-                                      "Property": "Internet Users(%)"
+                                      "Function": 0
                                     }
                                   },
-                                  "Function": 0
+                                  "Right": {
+                                    "RangePercent": {
+                                      "Min": {
+                                        "ScopedEval": {
+                                          "Expression": {
+                                            "Aggregation": {
+                                              "Expression": {
+                                                "ScopedEval": {
+                                                  "Expression": {
+                                                    "Aggregation": {
+                                                      "Expression": {
+                                                        "Column": {
+                                                          "Expression": {
+                                                            "SourceRef": {
+                                                              "Entity": "InternetUsage"
+                                                            }
+                                                          },
+                                                          "Property": "Internet Users(%)"
+                                                        }
+                                                      },
+                                                      "Function": 0
+                                                    }
+                                                  },
+                                                  "Scope": [
+                                                    {
+                                                      "AllRolesRef": {}
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "Function": 3
+                                            }
+                                          },
+                                          "Scope": []
+                                        }
+                                      },
+                                      "Max": {
+                                        "ScopedEval": {
+                                          "Expression": {
+                                            "Aggregation": {
+                                              "Expression": {
+                                                "ScopedEval": {
+                                                  "Expression": {
+                                                    "Aggregation": {
+                                                      "Expression": {
+                                                        "Column": {
+                                                          "Expression": {
+                                                            "SourceRef": {
+                                                              "Entity": "InternetUsage"
+                                                            }
+                                                          },
+                                                          "Property": "Internet Users(%)"
+                                                        }
+                                                      },
+                                                      "Function": 0
+                                                    }
+                                                  },
+                                                  "Scope": [
+                                                    {
+                                                      "AllRolesRef": {}
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "Function": 4
+                                            }
+                                          },
+                                          "Scope": []
+                                        }
+                                      },
+                                      "Percent": 0.5
+                                    }
+                                  }
                                 }
                               },
                               "Right": {
-                                "RangePercent": {
-                                  "Min": {
-                                    "ScopedEval": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Aggregation": {
                                       "Expression": {
-                                        "Aggregation": {
+                                        "Column": {
                                           "Expression": {
-                                            "ScopedEval": {
-                                              "Expression": {
-                                                "Aggregation": {
-                                                  "Expression": {
-                                                    "Column": {
-                                                      "Expression": {
-                                                        "SourceRef": {
-                                                          "Entity": "InternetUsage"
-                                                        }
-                                                      },
-                                                      "Property": "Internet Users(%)"
-                                                    }
-                                                  },
-                                                  "Function": 0
-                                                }
-                                              },
-                                              "Scope": [
-                                                {
-                                                  "AllRolesRef": {}
-                                                }
-                                              ]
+                                            "SourceRef": {
+                                              "Entity": "InternetUsage"
                                             }
                                           },
-                                          "Function": 3
+                                          "Property": "Internet Users(%)"
                                         }
                                       },
-                                      "Scope": []
+                                      "Function": 0
                                     }
                                   },
-                                  "Max": {
-                                    "ScopedEval": {
-                                      "Expression": {
-                                        "Aggregation": {
+                                  "Right": {
+                                    "RangePercent": {
+                                      "Min": {
+                                        "ScopedEval": {
                                           "Expression": {
-                                            "ScopedEval": {
+                                            "Aggregation": {
                                               "Expression": {
-                                                "Aggregation": {
+                                                "ScopedEval": {
                                                   "Expression": {
-                                                    "Column": {
+                                                    "Aggregation": {
                                                       "Expression": {
-                                                        "SourceRef": {
-                                                          "Entity": "InternetUsage"
+                                                        "Column": {
+                                                          "Expression": {
+                                                            "SourceRef": {
+                                                              "Entity": "InternetUsage"
+                                                            }
+                                                          },
+                                                          "Property": "Internet Users(%)"
                                                         }
                                                       },
-                                                      "Property": "Internet Users(%)"
+                                                      "Function": 0
                                                     }
                                                   },
-                                                  "Function": 0
+                                                  "Scope": [
+                                                    {
+                                                      "AllRolesRef": {}
+                                                    }
+                                                  ]
                                                 }
                                               },
-                                              "Scope": [
-                                                {
-                                                  "AllRolesRef": {}
-                                                }
-                                              ]
+                                              "Function": 3
                                             }
                                           },
-                                          "Function": 4
+                                          "Scope": []
                                         }
                                       },
-                                      "Scope": []
+                                      "Max": {
+                                        "ScopedEval": {
+                                          "Expression": {
+                                            "Aggregation": {
+                                              "Expression": {
+                                                "ScopedEval": {
+                                                  "Expression": {
+                                                    "Aggregation": {
+                                                      "Expression": {
+                                                        "Column": {
+                                                          "Expression": {
+                                                            "SourceRef": {
+                                                              "Entity": "InternetUsage"
+                                                            }
+                                                          },
+                                                          "Property": "Internet Users(%)"
+                                                        }
+                                                      },
+                                                      "Function": 0
+                                                    }
+                                                  },
+                                                  "Scope": [
+                                                    {
+                                                      "AllRolesRef": {}
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "Function": 4
+                                            }
+                                          },
+                                          "Scope": []
+                                        }
+                                      },
+                                      "Percent": 0.75
                                     }
-                                  },
-                                  "Percent": 0.5
+                                  }
                                 }
                               }
                             }
